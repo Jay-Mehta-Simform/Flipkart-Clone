@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+/* Global Styles */
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", Arial, sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+li {
+	padding: 5px;
+	display: inline-block;
+	list-style-type: none;
+}
+
+input {
+	padding: 5px;
+	outline: 2px solid black;
+	outline: none;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+input:focus {
+	outline: none;
+}
+
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+}
+
+/* Navbar Styles */
+
+nav {
+	background-color: #2874f0;
+	color: white;
+}
+
+ul {
+	display: flex;
+	align-items: center;
+}
+
+/* 1st Item. Content Flipkart Logo */
+.itemLogo {
+	padding: 9px 0px;
+	margin-left: 20rem;
+}
+
+.flipkartTextImg {
+	display: block;
+}
+
+.itemLogo span {
+	display: inline-block;
+	color: white;
+	font-size: 0.8rem;
+	font-style: italic;
+}
+
+.itemLogo i {
+	display: inline-block;
+	color: #ffe500;
+	font-size: 0.8rem;
+	font-style: italic;
+	padding: 0;
+}
+
+/* 2nd Item. Search Bar */
+.search {
+	margin-left: 0.5rem;
+	background: white;
+	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+.searchArea {
+	font-size: 0.9rem;
+	width: 35rem;
+	border: none;
+	background-color: white;
+}
+
+.searchBtn {
+	position: relative;
+	top: 5px;
+	background-color: white;
+	cursor: pointer;
+}
+
+/* 3rd Item. Login Btn */
+.login a {
+	margin-left: 13rem;
+	font-size: 1rem;
+	padding: 5px 40px;
+	color: #2874f0;
+	background-color: white;
+	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* 4th Item. More */
+.more {
+	margin-left: 2rem;
+}
+
+.more svg {
+	position: relative;
+	left: 6px;
+	transform: rotate(-90deg);
+}
+
+/* 5th Item. Cart */
+.cart {
+	margin-left: 2rem;
+}
