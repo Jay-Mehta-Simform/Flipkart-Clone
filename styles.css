@@ -8,6 +8,7 @@
 
 body {
 	font-family: "Roboto", Arial, sans-serif;
+	background-color: rgb(240, 240, 240);
 }
 
 a {
@@ -23,7 +24,6 @@ li {
 
 input {
 	padding: 5px;
-	outline: 2px solid black;
 	outline: none;
 }
 
@@ -48,8 +48,13 @@ button {
 /* Navbar Styles */
 
 nav {
+	position: fixed;
 	background-color: #2874f0;
 	color: white;
+	width: 100%;
+	/* overflow: hidden; */
+	height: 6.5vh;
+	z-index: 50;
 }
 
 ul {
@@ -60,37 +65,42 @@ ul {
 /* 1st Item. Content Flipkart Logo */
 .itemLogo {
 	padding: 9px 0px;
-	margin-left: 20rem;
+	margin-left: 15vw;
 }
 
 .flipkartTextImg {
 	display: block;
 }
 
-.itemLogo span {
+.explorePlus {
+	display: inline;
+	font-size: 0.7em;
+}
+
+.explorePlus span {
 	display: inline-block;
 	color: white;
-	font-size: 0.8rem;
 	font-style: italic;
 }
 
-.itemLogo i {
+.explorePlus i {
 	display: inline-block;
+	font-weight: 800;
 	color: #ffe500;
-	font-size: 0.8rem;
 	font-style: italic;
 	padding: 0;
 }
 
 /* 2nd Item. Search Bar */
 .search {
-	margin-left: 0.5rem;
+	margin-left: 0.5em;
+	margin-right: 11vw;
 	background: white;
 	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
 }
 .searchArea {
-	font-size: 0.9rem;
-	width: 35rem;
+	font-size: 0.9em;
+	width: 29.4vw;
 	border: none;
 	background-color: white;
 }
@@ -103,18 +113,42 @@ ul {
 }
 
 /* 3rd Item. Login Btn */
+.login {
+	/* position: relative; */
+}
+
 .login a {
-	margin-left: 13rem;
-	font-size: 1rem;
+	cursor: pointer;
+	font-size: 1em;
 	padding: 5px 40px;
 	color: #2874f0;
 	background-color: white;
 	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
 }
 
+.login a:hover ~ .loginOptions,
+.loginOptions:hover {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	/* left: 12.1vw; */
+	z-index: 5;
+}
+
+.loginOptions {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	z-index: 5;
+	display: none;
+}
+.loginOptions a {
+	width: 100%;
+}
+
 /* 4th Item. More */
 .more {
-	margin-left: 2rem;
+	margin-left: 1vw;
 }
 
 .more svg {
@@ -125,5 +159,28 @@ ul {
 
 /* 5th Item. Cart */
 .cart {
-	margin-left: 2rem;
+	margin-left: 1vw;
+}
+
+/* Categories Section Styles */
+.categories {
+	padding: 0 8vw;
+	position: relative;
+	top: 6.5vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+	height: 12vh;
+	background-color: white;
+	box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.category {
+	text-align: center;
+	font-size: 0.88em;
+}
+.category img {
+	display: block;
+	height: 7vh;
 }
