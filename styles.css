@@ -1,6 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 /* Global Styles */
+:root {
+	--blue: #2874f0;
+}
+
 * {
 	margin: 0;
 	box-sizing: border-box;
@@ -49,7 +52,7 @@ button {
 
 nav {
 	position: fixed;
-	background-color: #2874f0;
+	background-color: var(--blue);
 	color: white;
 	width: 100%;
 	/* overflow: hidden; */
@@ -113,42 +116,109 @@ ul {
 }
 
 /* 3rd Item. Login Btn */
-.login {
-	/* position: relative; */
+.login > a:after {
+	content: "";
+	display: block;
+	position: fixed;
+	height: 20px;
+	width: 6vw;
 }
 
-.login a {
+.login > a {
 	cursor: pointer;
 	font-size: 1em;
-	padding: 5px 40px;
-	color: #2874f0;
+	padding: 5px 2vw;
+	color: var(--blue);
 	background-color: white;
 	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
 }
 
-.login a:hover ~ .loginOptions,
-.loginOptions:hover {
+/* Dropdown for login */
+.login a:hover ~ .Options,
+.Options:hover {
 	display: flex;
 	flex-direction: column;
 	position: absolute;
-	/* left: 12.1vw; */
 	z-index: 5;
 }
 
-.loginOptions {
+.Options > a:hover {
+	cursor: pointer;
+	background-color: #e7e7e7;
+}
+
+.Options:before {
+	position: absolute;
+	content: "";
+	border-top: 9px solid white;
+	border-left: 9px solid white;
+	border-bottom: 9px solid transparent;
+	border-right: 9px solid transparent;
+	top: -7px;
+	align-self: center;
+	transform: rotate(45deg);
+	z-index: 4;
+}
+
+.Options {
+	top: 6.5vh;
+	width: 12vw;
+	margin-left: -3vw;
+	background-color: white;
+	color: black;
 	position: absolute;
 	display: flex;
 	flex-direction: column;
 	z-index: 5;
+	border-radius: 3px;
+	box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1);
 	display: none;
 }
-.loginOptions a {
+
+.Options > a {
+	display: flex;
+	align-items: center;
 	width: 100%;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 0.9em;
+	font-weight: 400;
+	color: black;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 15px;
+}
+
+.Options a img {
+	margin-right: 0.3vw;
+}
+
+.signUp {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 0px;
+}
+
+.signUp span,
+.signUp a {
+	padding: 10px 15px;
+	font-size: 0.9em;
+	font-weight: 500;
+}
+
+.signUp a {
+	color: var(--blue);
 }
 
 /* 4th Item. More */
 .more {
 	margin-left: 1vw;
+}
+
+.more > a:after {
+	content: "";
+	display: block;
+	position: fixed;
+	height: 20px;
+	width: 3vw;
 }
 
 .more svg {
@@ -157,9 +227,28 @@ ul {
 	transform: rotate(-90deg);
 }
 
+.more .Options a:first-child {
+	border: 0;
+}
+
+/* Dropdown for More */
+.more:hover .Options,
+.more .Options:hover {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	margin-left: -5vw;
+	z-index: 5;
+}
+
+.more:hover svg {
+	transform: rotate(90deg);
+}
+
 /* 5th Item. Cart */
 .cart {
 	margin-left: 1vw;
+	cursor: pointer;
 }
 
 /* Categories Section Styles */
