@@ -48,6 +48,57 @@ button {
 	cursor: pointer;
 }
 
+/* General Menu Card Styles */
+
+.Options > a:hover {
+	cursor: pointer;
+	background-color: #e7e7e7;
+}
+
+.Options:before {
+	position: absolute;
+	content: "";
+	border-top: 9px solid white;
+	border-left: 9px solid white;
+	border-bottom: 9px solid transparent;
+	border-right: 9px solid transparent;
+	top: -7px;
+	align-self: center;
+	transform: rotate(45deg);
+	z-index: 4;
+}
+
+.Options {
+	top: 6.5vh;
+	width: 12vw;
+	margin-left: -3vw;
+	background-color: white;
+	color: black;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	z-index: 5;
+	border-radius: 3px;
+	box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1);
+	display: none;
+}
+
+.Options > a {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 0.9em;
+	font-weight: 400;
+	color: black;
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 15px;
+}
+
+.Options a img {
+	margin-right: 0.3vw;
+}
+
 /* Navbar Styles */
 
 nav {
@@ -142,55 +193,6 @@ ul {
 	z-index: 5;
 }
 
-.Options > a:hover {
-	cursor: pointer;
-	background-color: #e7e7e7;
-}
-
-.Options:before {
-	position: absolute;
-	content: "";
-	border-top: 9px solid white;
-	border-left: 9px solid white;
-	border-bottom: 9px solid transparent;
-	border-right: 9px solid transparent;
-	top: -7px;
-	align-self: center;
-	transform: rotate(45deg);
-	z-index: 4;
-}
-
-.Options {
-	top: 6.5vh;
-	width: 12vw;
-	margin-left: -3vw;
-	background-color: white;
-	color: black;
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	z-index: 5;
-	border-radius: 3px;
-	box-shadow: 0 0 25px 1px rgba(0, 0, 0, 0.1);
-	display: none;
-}
-
-.Options > a {
-	display: flex;
-	align-items: center;
-	width: 100%;
-	font-family: "Roboto", Arial, sans-serif;
-	font-size: 0.9em;
-	font-weight: 400;
-	color: black;
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	padding: 15px;
-}
-
-.Options a img {
-	margin-right: 0.3vw;
-}
-
 .signUp {
 	display: flex;
 	justify-content: space-between;
@@ -253,7 +255,7 @@ ul {
 
 /* Categories Section Styles */
 .categories {
-	padding: 0 8vw;
+	padding: 0 11vw;
 	position: relative;
 	top: 6.5vh;
 	display: flex;
@@ -266,10 +268,188 @@ ul {
 }
 
 .category {
+	cursor: pointer;
 	text-align: center;
 	font-size: 0.88em;
 }
+
+.category .categoryName::after {
+	content: "";
+	position: fixed;
+	display: block;
+	height: 0.9vh;
+	width: 4vw;
+}
+
+.category:hover span > svg {
+	transform: rotate(90deg);
+}
+
 .category img {
 	display: block;
-	height: 7vh;
+	width: 4vw;
+}
+
+.category svg {
+	transform: rotate(-90deg);
+}
+
+.category .Options {
+	top: 12vh;
+	margin-left: -4vw;
+}
+
+.category .Options .OptionsMainMenu .mainOption a,
+.category .Options .OptionsMainMenu .mainOption .OptionsSubMenu a {
+	display: flex;
+	align-items: center;
+	/* outline: 2px solid greenyellow; */
+	justify-content: flex-start;
+	width: 100%;
+	font-family: "Roboto", Arial, sans-serif;
+	font-size: 0.9em;
+	font-weight: 400;
+	color: black;
+	padding: 18px;
+}
+
+.OptionsSubMenu a {
+	padding: 0px 1vw;
+	background-color: white;
+}
+
+.category:hover .Options {
+	display: flex;
+}
+
+.mainOption:hover .OptionsSubMenu {
+	display: flex;
+	flex-direction: column;
+}
+
+.OptionsSubMenu {
+	display: none;
+}
+
+.OptionsSubMenu > span {
+	display: block;
+	width: max-content;
+	font-size: 0.8em;
+	font-weight: 300;
+	background-color: white;
+	padding: 5px;
+}
+
+.mainOption > a:hover,
+.OptionsSubMenu a:hover {
+	color: #2874f0 !important;
+	background-color: #e7e7e7;
+}
+
+.OptionsMainMenu .OptionsSubMenu {
+	position: absolute;
+	left: 12vw;
+	top: 0vh;
+}
+
+/* Deals of the day section styles */
+.dealsContainer,
+.booksContainer {
+	position: relative;
+	top: 6.8vh;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 2vh 5vw;
+}
+
+.dealsHeader {
+	background-color: white;
+	color: black;
+	top: 9vh;
+	height: max-content;
+	padding: 1vh 1vw;
+	font-size: 1.2em;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.timer,
+.shopNow {
+	font-weight: 300;
+	font-size: 0.8em;
+}
+
+.dealsHeader img {
+	height: 2.5vh;
+	padding: 0 1vw;
+}
+
+.dealsHeader button {
+	margin-left: auto;
+	background-color: #2874f0;
+	color: white;
+	padding: 1vh 0.8vw;
+	font-weight: 700;
+	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+.dealsCardsContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	background-color: white;
+}
+
+.card {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.card img {
+	width: 10vw;
+}
+
+.card > span {
+	padding: 1vh 2vw;
+	display: block;
+}
+
+.card span span {
+	display: flex;
+	padding: 3px 0;
+	justify-content: center;
+}
+
+.itemDiscount {
+	color: rgb(0, 156, 0);
+	font-size: 0.9em;
+	font-weight: 300;
+}
+
+.itemCategory {
+	font-size: 0.8em;
+	color: grey;
+}
+
+.shopNow {
+	display: block;
+}
+
+.booksContainer .dealsHeader {
+	flex-direction: column;
+}
+
+.mainHeader,
+.mainHeader ~ span {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
 }
