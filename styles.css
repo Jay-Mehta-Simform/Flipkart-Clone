@@ -97,6 +97,7 @@ button {
 
 .Options a img {
 	margin-right: 0.3vw;
+	height: 20px;
 }
 
 /* Navbar Styles */
@@ -113,17 +114,19 @@ nav {
 
 ul {
 	display: flex;
+	flex-direction: row;
 	align-items: center;
+	justify-content: center;
 }
 
 /* 1st Item. Content Flipkart Logo */
 .itemLogo {
 	padding: 9px 0px;
-	margin-left: 15vw;
 }
 
 .flipkartTextImg {
 	display: block;
+	height: 20px;
 }
 
 .explorePlus {
@@ -135,6 +138,10 @@ ul {
 	display: inline-block;
 	color: white;
 	font-style: italic;
+}
+
+.plus {
+	height: 10px;
 }
 
 .explorePlus i {
@@ -150,6 +157,9 @@ ul {
 	margin-left: 0.5em;
 	margin-right: 11vw;
 	background: white;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
 }
 .searchArea {
@@ -161,9 +171,15 @@ ul {
 
 .searchBtn {
 	position: relative;
-	top: 5px;
+	display: flex;
+	align-items: center;
 	background-color: white;
 	cursor: pointer;
+}
+
+.searchBtn svg {
+	width: 20px;
+	height: 20px;
 }
 
 /* 3rd Item. Login Btn */
@@ -226,6 +242,8 @@ ul {
 .more svg {
 	position: relative;
 	left: 6px;
+	width: 4.7px;
+	height: 8px;
 	transform: rotate(-90deg);
 }
 
@@ -251,6 +269,11 @@ ul {
 .cart {
 	margin-left: 1vw;
 	cursor: pointer;
+}
+
+.cart svg {
+	height: 14px;
+	width: 14px;
 }
 
 /* Categories Section Styles */
@@ -303,7 +326,6 @@ ul {
 .category .Options .OptionsMainMenu .mainOption .OptionsSubMenu a {
 	display: flex;
 	align-items: center;
-	/* outline: 2px solid greenyellow; */
 	justify-content: flex-start;
 	width: 100%;
 	font-family: "Roboto", Arial, sans-serif;
@@ -360,17 +382,29 @@ ul {
 	height: 100%;
 	width: 100%;
 	display: flex;
-	justify-content: center;
 	flex-direction: column;
 	padding: 2vh 5vw;
 }
 
+.dealsContainer {
+	flex-direction: row;
+}
+
+.clockAndDeals {
+	height: 100%;
+	width: 87.5%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
 .dealsHeader {
 	background-color: white;
+	border-bottom: 2px solid rgb(224, 224, 224);
 	color: black;
 	top: 9vh;
-	height: max-content;
 	padding: 1vh 1vw;
+	padding-right: 2vw;
 	font-size: 1.2em;
 	width: 100%;
 	display: flex;
@@ -380,7 +414,7 @@ ul {
 
 .timer,
 .shopNow {
-	font-weight: 300;
+	font-weight: 200;
 	font-size: 0.8em;
 }
 
@@ -399,11 +433,34 @@ ul {
 }
 
 .dealsCardsContainer {
+	overflow: hidden;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
+	height: 100%;
 	background-color: white;
+}
+
+.booksContainer .dealsCardsContainer {
+	padding-top: 5px;
+}
+
+.dealsContainer .dealsCardsContainer::after {
+	content: ">";
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 3em;
+	border-radius: 6px;
+	background-color: #fff;
+	position: relative;
+	right: 8vw;
+	top: 8vh;
+	height: 13vh;
+	width: 3vw;
+	padding: 0 0.7vw;
+	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
 }
 
 .card {
@@ -419,6 +476,7 @@ ul {
 .card > span {
 	padding: 1vh 2vw;
 	display: block;
+	white-space: nowrap;
 }
 
 .card span span {
@@ -429,17 +487,18 @@ ul {
 
 .itemDiscount {
 	color: rgb(0, 156, 0);
-	font-size: 0.9em;
+	font-size: 0.85em;
 	font-weight: 300;
 }
 
 .itemCategory {
-	font-size: 0.8em;
+	font-size: 0.75em;
 	color: grey;
 }
 
 .shopNow {
 	display: block;
+	font-size: 0.7em;
 }
 
 .booksContainer .dealsHeader {
@@ -452,4 +511,94 @@ ul {
 	width: 100%;
 	align-items: center;
 	justify-content: space-between;
+}
+
+/* Advert Styles*/
+.dealsContainer::after {
+	position: absolute;
+	background-image: url("Assets/advert.png");
+	background-size: 100% 100%;
+	height: 90%;
+	width: 12.5%;
+	display: block;
+	content: "";
+	right: 4.5vw;
+	border: 6px solid rgb(240, 240, 240);
+	border-top: 0;
+	border-bottom: 0;
+}
+
+@media only screen and (max-width: 1023px) {
+	* {
+		font-size: 15px;
+	}
+	.category img {
+		width: 9vw;
+	}
+
+	.category span {
+		font-size: 0.75em;
+	}
+
+	.dealsContainer::after {
+		height: 85%;
+	}
+
+	.searchBtn svg {
+		width: 15px;
+		height: 15px;
+	}
+
+	.flipkartTextImg {
+		height: 15px;
+	}
+
+	.plus {
+		height: 8px;
+	}
+
+	.cart svg {
+		height: 10px;
+		width: 10px;
+	}
+
+	.more svg {
+		height: 6px;
+		width: 3.8px;
+	}
+
+	.Options a img {
+		height: 15px;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	* {
+		font-size: 10px;
+	}
+
+	.searchArea {
+		font-size: 0.8em;
+	}
+	.searchBtn svg {
+		width: 10px;
+		height: 10px;
+	}
+	.flipkartTextImg {
+		height: 10px;
+	}
+	.plus {
+		height: 5px;
+	}
+	.cart svg {
+		height: 7px;
+		width: 7px;
+	}
+	.more svg {
+		height: 4px;
+		width: 3px;
+	}
+	.Options a img {
+		height: 10px;
+	}
 }
