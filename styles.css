@@ -51,6 +51,7 @@ button {
 /* General Menu Card Styles */
 
 .Options > a:hover {
+	color: var(--blue);
 	cursor: pointer;
 	background-color: #e7e7e7;
 }
@@ -95,6 +96,10 @@ button {
 	padding: 15px;
 }
 
+.Options a:hover {
+	color: var(--blue);
+}
+
 .Options a img {
 	margin-right: 0.3vw;
 	height: 20px;
@@ -107,7 +112,6 @@ nav {
 	background-color: var(--blue);
 	color: white;
 	width: 100%;
-	/* overflow: hidden; */
 	height: 6.5vh;
 	z-index: 50;
 }
@@ -409,7 +413,6 @@ ul {
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	align-items: center;
 }
 
 .timer,
@@ -432,7 +435,13 @@ ul {
 	box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
 }
 
+.booksContainer .dealsHeader button {
+	position: relative;
+	top: 1vh;
+}
+
 .dealsCardsContainer {
+	position: relative;
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;
@@ -446,20 +455,23 @@ ul {
 	padding-top: 5px;
 }
 
-.dealsContainer .dealsCardsContainer::after {
-	content: ">";
+.booksContainer {
+	padding-top: 0;
+}
+
+.arrow {
 	display: flex;
+	border-radius: 5px;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
+	right: 1vw;
+	transform: translateY(-50%);
+	top: 50%;
 	font-size: 3em;
-	border-radius: 6px;
-	background-color: #fff;
-	position: relative;
-	right: 8vw;
-	top: 8vh;
-	height: 13vh;
 	width: 3vw;
-	padding: 0 0.7vw;
+	height: 12vh;
+	background-color: #fff;
 	box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -468,8 +480,7 @@ ul {
 	align-items: center;
 	flex-direction: column;
 }
-
-.card img {
+f .card img {
 	width: 10vw;
 }
 
@@ -528,6 +539,8 @@ ul {
 	border-bottom: 0;
 }
 
+/* Basic Media Queries */
+
 @media only screen and (max-width: 1023px) {
 	* {
 		font-size: 15px;
@@ -570,6 +583,11 @@ ul {
 	.Options a img {
 		height: 15px;
 	}
+
+	.arrow {
+		right: 1.7vw;
+		width: 4vw;
+	}
 }
 
 @media only screen and (max-width: 650px) {
@@ -600,5 +618,13 @@ ul {
 	}
 	.Options a img {
 		height: 10px;
+	}
+
+	.dealsContainer::after {
+		height: 92.5%;
+	}
+
+	.arrow {
+		right: 3.8vw;
 	}
 }
